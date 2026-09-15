@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FEP RC — Wireframe Index</title>
+  <title>FEP RC — Home Wireframes</title>
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bar-h: 56px;
@@ -19,7 +24,8 @@
       --accent: #18181b;
     }
 
-    html, body {
+    html,
+    body {
       height: 100%;
       font-family: ui-sans-serif, system-ui, sans-serif;
       background: var(--bg);
@@ -28,9 +34,12 @@
     }
 
     /* ── TOP BAR ── */
+
     .topbar {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: var(--bar-h);
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -50,11 +59,15 @@
     }
 
     .topbar-logo {
-      width: 28px; height: 28px;
+      width: 28px;
+      height: 28px;
       background: #18181b;
       border-radius: 5px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .topbar-logo span {
       color: white;
       font-size: 8px;
@@ -68,6 +81,7 @@
       color: var(--text);
       letter-spacing: .02em;
     }
+
     .topbar-subtitle {
       font-size: 10px;
       color: var(--muted);
@@ -83,9 +97,10 @@
       justify-content: center;
     }
 
-    /* View mode buttons */
     .view-btn {
-      display: flex; align-items: center; gap-5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
       padding: 6px 12px;
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -95,9 +110,13 @@
       color: var(--muted);
       cursor: pointer;
       transition: all .15s;
-      gap: 5px;
     }
-    .view-btn:hover { border-color: #a1a1aa; color: var(--text); }
+
+    .view-btn:hover {
+      border-color: #a1a1aa;
+      color: var(--text);
+    }
+
     .view-btn.active {
       background: var(--text);
       border-color: var(--text);
@@ -121,10 +140,12 @@
     }
 
     /* ── TABS ── */
+
     .tabs {
       position: fixed;
       top: var(--bar-h);
-      left: 0; right: 0;
+      left: 0;
+      right: 0;
       height: var(--tab-h);
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -136,7 +157,9 @@
     }
 
     .tab {
-      display: flex; align-items: center; gap: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       padding: 0 16px;
       border: none;
       background: transparent;
@@ -149,45 +172,65 @@
       transition: all .15s;
       white-space: nowrap;
     }
-    .tab:hover { color: var(--text); }
+
+    .tab:hover {
+      color: var(--text);
+    }
+
     .tab.active {
       color: var(--text);
       border-bottom-color: var(--text);
     }
+
     .tab-dot {
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       flex-shrink: 0;
     }
 
     /* ── FRAME AREA ── */
+
     .frame-area {
       position: fixed;
       top: var(--total-chrome);
-      left: 0; right: 0; bottom: 0;
+      left: 0;
+      right: 0;
+      bottom: 24px;
       overflow: hidden;
     }
 
     /* Single view */
+
     .single-pane {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       display: none;
     }
-    .single-pane.active { display: block; }
+
+    .single-pane.active {
+      display: block;
+    }
 
     .single-pane iframe {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       border: none;
       display: block;
     }
 
     /* Split view */
+
     .split-pane {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       display: none;
       flex-direction: row;
     }
-    .split-pane.active { display: flex; }
+
+    .split-pane.active {
+      display: flex;
+    }
 
     .split-panel {
       flex: 1;
@@ -196,7 +239,10 @@
       overflow: hidden;
       border-right: 1px solid var(--border);
     }
-    .split-panel:last-child { border-right: none; }
+
+    .split-panel:last-child {
+      border-right: none;
+    }
 
     .split-label {
       padding: 6px 14px;
@@ -221,6 +267,7 @@
     }
 
     /* Resize handle */
+
     .resize-handle {
       width: 4px;
       background: var(--border);
@@ -229,21 +276,30 @@
       transition: background .15s;
       position: relative;
     }
-    .resize-handle:hover { background: #a1a1aa; }
+
+    .resize-handle:hover {
+      background: #a1a1aa;
+    }
+
     .resize-handle::after {
       content: '';
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 2px; height: 32px;
+      width: 2px;
+      height: 32px;
       background: #a1a1aa;
       border-radius: 2px;
     }
 
     /* ── STATUS BAR ── */
+
     .status {
       position: fixed;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       height: 24px;
       background: var(--surface);
       border-top: 1px solid var(--border);
@@ -257,196 +313,546 @@
     }
 
     .status-dot {
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: #22c55e;
       flex-shrink: 0;
     }
 
-    /* Adjust frame area when status bar present */
-    .frame-area {
-      bottom: 24px;
+    .icon {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
     }
-
-    /* Icon SVGs inline */
-    .icon { width: 14px; height: 14px; display: inline-block; vertical-align: middle; }
   </style>
 </head>
+
 <body>
 
-<!-- TOP BAR -->
-<header class="topbar">
-  <div class="topbar-brand">
-    <div class="topbar-logo"><span>FEP</span></div>
-    <div>
-      <div class="topbar-title">FEP RC — Wireframe Index</div>
-      <div class="topbar-subtitle">Research Center · U.Porto</div>
-    </div>
-  </div>
+  <!-- TOP BAR -->
 
-  <div class="topbar-controls">
-    <button class="view-btn active" id="btn-split" onclick="setView('split')" title="Vista lado a lado">
-      <svg class="icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="6" height="12" rx="1"/><rect x="9" y="2" width="6" height="12" rx="1"/></svg>
-      Lado a lado
-    </button>
-    <button class="view-btn" id="btn-v1" onclick="setView('v1')" title="Ver apenas v1">
-      <svg class="icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="1"/></svg>
-      Wireframe v1
-    </button>
-    <button class="view-btn" id="btn-populated" onclick="setView('populated')" title="Ver apenas Populado">
-      <svg class="icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="1"/></svg>
-      Wireframe Populado
-    </button>
-  </div>
+  <header class="topbar">
 
-  <div class="topbar-right">
-    <span class="badge">2 ficheiros</span>
-  </div>
-</header>
-
-<!-- TABS (visíveis na vista única) -->
-<nav class="tabs" id="tab-bar" style="display:none">
-  <button class="tab active" id="tab-v1" onclick="switchTab('v1')">
-    <span class="tab-dot" style="background:#a1a1aa"></span>
-    fep-wireframe-v1.html
-  </button>
-  <button class="tab" id="tab-populated" onclick="switchTab('populated')">
-    <span class="tab-dot" style="background:#22c55e"></span>
-    fep-wireframe-populated.html
-  </button>
-</nav>
-
-<!-- FRAME AREA -->
-<div class="frame-area">
-
-  <!-- Split view -->
-  <div class="split-pane active" id="view-split">
-    <div class="split-panel" id="panel-left" style="flex:1">
-      <div class="split-label">
-        <span class="tab-dot" style="background:#a1a1aa"></span>
-        fep-wireframe-v1.html — Original (React SPA)
+    <div class="topbar-brand">
+      <div class="topbar-logo">
+        <span>FEP</span>
       </div>
-      <iframe src="fep-wireframe-v1.html" title="FEP Wireframe v1 — Original React SPA" loading="lazy"></iframe>
-    </div>
 
-    <div class="resize-handle" id="resizer"></div>
+      <div>
+        <div class="topbar-title">
+          FEP RC — Home Wireframes
+        </div>
 
-    <div class="split-panel" id="panel-right" style="flex:1">
-      <div class="split-label">
-        <span class="tab-dot" style="background:#22c55e"></span>
-        fep-wireframe-populated.html — Populado com conteúdo real
+        <div class="topbar-subtitle">
+          Research Center · U.Porto
+        </div>
       </div>
-      <iframe src="fep-wireframe-populated.html" title="FEP Wireframe Populado com conteúdo real do Lovable" loading="lazy"></iframe>
     </div>
+
+
+    <div class="topbar-controls">
+
+      <button
+        class="view-btn active"
+        id="btn-split"
+        onclick="setView('split')"
+        title="Comparar os dois wireframes lado a lado"
+      >
+        <svg
+          class="icon"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <rect x="1" y="2" width="6" height="12" rx="1"/>
+          <rect x="9" y="2" width="6" height="12" rx="1"/>
+        </svg>
+
+        Lado a lado
+      </button>
+
+
+      <button
+        class="view-btn"
+        id="btn-content"
+        onclick="setView('content')"
+        title="Ver apenas a versão Content-Oriented"
+      >
+        <svg
+          class="icon"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <rect x="2" y="2" width="12" height="12" rx="1"/>
+        </svg>
+
+        Content-Oriented
+      </button>
+
+
+      <button
+        class="view-btn"
+        id="btn-institutional"
+        onclick="setView('institutional')"
+        title="Ver apenas a versão Institucional"
+      >
+        <svg
+          class="icon"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <rect x="2" y="2" width="12" height="12" rx="1"/>
+        </svg>
+
+        Institucional
+      </button>
+
+    </div>
+
+
+    <div class="topbar-right">
+      <span class="badge">2 wireframes</span>
+    </div>
+
+  </header>
+
+
+  <!-- TABS -->
+
+  <nav
+    class="tabs"
+    id="tab-bar"
+    style="display:none"
+  >
+
+    <button
+      class="tab active"
+      id="tab-content"
+      onclick="switchTab('content')"
+    >
+      <span
+        class="tab-dot"
+        style="background:#22c55e"
+      ></span>
+
+      Content-Oriented
+    </button>
+
+
+    <button
+      class="tab"
+      id="tab-institutional"
+      onclick="switchTab('institutional')"
+    >
+      <span
+        class="tab-dot"
+        style="background:#a1a1aa"
+      ></span>
+
+      Institucional
+    </button>
+
+  </nav>
+
+
+  <!-- FRAME AREA -->
+
+  <div class="frame-area">
+
+    <!-- Split view -->
+
+    <div
+      class="split-pane active"
+      id="view-split"
+    >
+
+      <!-- Content-Oriented -->
+
+      <div
+        class="split-panel"
+        id="panel-left"
+        style="flex:1"
+      >
+
+        <div class="split-label">
+
+          <span
+            class="tab-dot"
+            style="background:#22c55e"
+          ></span>
+
+          FEP RC — Home — Content-Oriented
+
+        </div>
+
+
+        <iframe
+          src="fep-rc-home-v2-content-oriented-wireframe-v1_1.html"
+          title="FEP RC Home — Content-Oriented Wireframe"
+          loading="lazy"
+        ></iframe>
+
+      </div>
+
+
+      <!-- Resize -->
+
+      <div
+        class="resize-handle"
+        id="resizer"
+      ></div>
+
+
+      <!-- Institucional -->
+
+      <div
+        class="split-panel"
+        id="panel-right"
+        style="flex:1"
+      >
+
+        <div class="split-label">
+
+          <span
+            class="tab-dot"
+            style="background:#a1a1aa"
+          ></span>
+
+          FEP RC — Home — Institucional
+
+        </div>
+
+
+        <iframe
+          src="fep-rc-home-v1-institucional-wireframe-v1_1.html"
+          title="FEP RC Home — Institucional Wireframe"
+          loading="lazy"
+        ></iframe>
+
+      </div>
+
+    </div>
+
+
+    <!-- Single: Content-Oriented -->
+
+    <div
+      class="single-pane"
+      id="view-content"
+    >
+
+      <iframe
+        src="fep-rc-home-v2-content-oriented-wireframe-v1_1.html"
+        title="FEP RC Home — Content-Oriented Wireframe"
+      ></iframe>
+
+    </div>
+
+
+    <!-- Single: Institucional -->
+
+    <div
+      class="single-pane"
+      id="view-institutional"
+    >
+
+      <iframe
+        src="fep-rc-home-v1-institucional-wireframe-v1_1.html"
+        title="FEP RC Home — Institucional Wireframe"
+      ></iframe>
+
+    </div>
+
   </div>
 
-  <!-- Single: v1 -->
-  <div class="single-pane" id="view-v1">
-    <iframe src="fep-wireframe-v1.html" title="FEP Wireframe v1 — Original React SPA"></iframe>
+
+  <!-- STATUS BAR -->
+
+  <div class="status">
+
+    <span class="status-dot"></span>
+
+    <span>
+      2 wireframes carregados
+    </span>
+
+
+    <span
+      style="margin-left:auto; display:flex; gap:16px;"
+    >
+
+      <span id="status-mode">
+        Vista: Lado a lado
+      </span>
+
+      <span>
+        FEP Research Center
+      </span>
+
+    </span>
+
   </div>
 
-  <!-- Single: populated -->
-  <div class="single-pane" id="view-populated">
-    <iframe src="fep-wireframe-populated.html" title="FEP Wireframe Populado com conteúdo real do Lovable"></iframe>
-  </div>
 
-</div>
+  <script>
 
-<!-- STATUS BAR -->
-<div class="status">
-  <span class="status-dot"></span>
-  <span>2 wireframes carregados</span>
-  <span style="margin-left:auto; display:flex; gap:16px;">
-    <span id="status-mode">Vista: Lado a lado</span>
-    <span>FEP Research Center · fep-research-hub.lovable.app</span>
-  </span>
-</div>
+    /* ── View mode ── */
 
-<script>
-  /* ── View mode ── */
-  let currentView = 'split';
+    let currentView = 'split';
 
-  function setView(mode) {
-    currentView = mode;
 
-    // Hide all
-    document.getElementById('view-split').classList.remove('active');
-    document.getElementById('view-v1').classList.remove('active');
-    document.getElementById('view-populated').classList.remove('active');
-    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+    function setView(mode) {
 
-    // Tab bar only in single mode
-    const tabBar = document.getElementById('tab-bar');
+      currentView = mode;
 
-    if (mode === 'split') {
-      document.getElementById('view-split').classList.add('active');
-      document.getElementById('btn-split').classList.add('active');
-      tabBar.style.display = 'none';
-      // Restore frame-area top
-      document.querySelector('.frame-area').style.top = 'var(--total-chrome)';
-      document.getElementById('status-mode').textContent = 'Vista: Lado a lado';
-    } else if (mode === 'v1') {
-      document.getElementById('view-v1').classList.add('active');
-      document.getElementById('btn-v1').classList.add('active');
-      tabBar.style.display = 'flex';
-      document.querySelector('.frame-area').style.top = 'calc(var(--total-chrome) + var(--tab-h))';
-      activateTab('v1');
-      document.getElementById('status-mode').textContent = 'Vista: Wireframe v1';
-    } else {
-      document.getElementById('view-populated').classList.add('active');
-      document.getElementById('btn-populated').classList.add('active');
-      tabBar.style.display = 'flex';
-      document.querySelector('.frame-area').style.top = 'calc(var(--total-chrome) + var(--tab-h))';
-      activateTab('populated');
-      document.getElementById('status-mode').textContent = 'Vista: Wireframe Populado';
+      // Hide all views
+
+      document
+        .getElementById('view-split')
+        .classList.remove('active');
+
+      document
+        .getElementById('view-content')
+        .classList.remove('active');
+
+      document
+        .getElementById('view-institutional')
+        .classList.remove('active');
+
+
+      // Reset buttons
+
+      document
+        .querySelectorAll('.view-btn')
+        .forEach(button => {
+          button.classList.remove('active');
+        });
+
+
+      // Tab bar
+
+      const tabBar =
+        document.getElementById('tab-bar');
+
+
+      if (mode === 'split') {
+
+        document
+          .getElementById('view-split')
+          .classList.add('active');
+
+        document
+          .getElementById('btn-split')
+          .classList.add('active');
+
+        tabBar.style.display = 'none';
+
+        document
+          .querySelector('.frame-area')
+          .style.top = 'var(--total-chrome)';
+
+        document
+          .getElementById('status-mode')
+          .textContent = 'Vista: Lado a lado';
+
+      }
+
+
+      else if (mode === 'content') {
+
+        document
+          .getElementById('view-content')
+          .classList.add('active');
+
+        document
+          .getElementById('btn-content')
+          .classList.add('active');
+
+        tabBar.style.display = 'flex';
+
+        document
+          .querySelector('.frame-area')
+          .style.top =
+          'calc(var(--total-chrome) + var(--tab-h))';
+
+        activateTab('content');
+
+        document
+          .getElementById('status-mode')
+          .textContent =
+          'Vista: Content-Oriented';
+
+      }
+
+
+      else if (mode === 'institutional') {
+
+        document
+          .getElementById('view-institutional')
+          .classList.add('active');
+
+        document
+          .getElementById('btn-institutional')
+          .classList.add('active');
+
+        tabBar.style.display = 'flex';
+
+        document
+          .querySelector('.frame-area')
+          .style.top =
+          'calc(var(--total-chrome) + var(--tab-h))';
+
+        activateTab('institutional');
+
+        document
+          .getElementById('status-mode')
+          .textContent =
+          'Vista: Institucional';
+
+      }
+
     }
-  }
 
-  /* ── Tab switching ── */
-  function switchTab(name) {
-    // In single mode, switch to the chosen wireframe
-    setView(name);
-  }
 
-  function activateTab(name) {
-    document.getElementById('tab-v1').classList.toggle('active', name === 'v1');
-    document.getElementById('tab-populated').classList.toggle('active', name === 'populated');
-  }
+    /* ── Tab switching ── */
 
-  /* ── Resizer drag ── */
-  const resizer = document.getElementById('resizer');
-  const leftPanel = document.getElementById('panel-left');
-  const rightPanel = document.getElementById('panel-right');
-  let isResizing = false;
+    function switchTab(name) {
+      setView(name);
+    }
 
-  resizer.addEventListener('mousedown', e => {
-    isResizing = true;
-    document.body.style.cursor = 'col-resize';
-    document.body.style.userSelect = 'none';
-    // Disable pointer events on iframes during drag
-    document.querySelectorAll('iframe').forEach(f => f.style.pointerEvents = 'none');
-  });
 
-  document.addEventListener('mousemove', e => {
-    if (!isResizing) return;
-    const container = document.querySelector('.split-pane');
-    const rect = container.getBoundingClientRect();
-    const totalWidth = rect.width - resizer.offsetWidth;
-    const leftW = Math.max(200, Math.min(e.clientX - rect.left, totalWidth - 200));
-    const rightW = totalWidth - leftW;
-    leftPanel.style.flex = 'none';
-    leftPanel.style.width = leftW + 'px';
-    rightPanel.style.flex = 'none';
-    rightPanel.style.width = rightW + 'px';
-  });
+    function activateTab(name) {
 
-  document.addEventListener('mouseup', () => {
-    if (!isResizing) return;
-    isResizing = false;
-    document.body.style.cursor = '';
-    document.body.style.userSelect = '';
-    document.querySelectorAll('iframe').forEach(f => f.style.pointerEvents = '');
-  });
-</script>
+      document
+        .getElementById('tab-content')
+        .classList.toggle(
+          'active',
+          name === 'content'
+        );
+
+      document
+        .getElementById('tab-institutional')
+        .classList.toggle(
+          'active',
+          name === 'institutional'
+        );
+
+    }
+
+
+    /* ── Resizer drag ── */
+
+    const resizer =
+      document.getElementById('resizer');
+
+    const leftPanel =
+      document.getElementById('panel-left');
+
+    const rightPanel =
+      document.getElementById('panel-right');
+
+    let isResizing = false;
+
+
+    resizer.addEventListener(
+      'mousedown',
+      e => {
+
+        isResizing = true;
+
+        document.body.style.cursor =
+          'col-resize';
+
+        document.body.style.userSelect =
+          'none';
+
+
+        // Disable pointer events on iframes during drag
+
+        document
+          .querySelectorAll('iframe')
+          .forEach(frame => {
+            frame.style.pointerEvents = 'none';
+          });
+
+      }
+    );
+
+
+    document.addEventListener(
+      'mousemove',
+      e => {
+
+        if (!isResizing) return;
+
+
+        const container =
+          document.querySelector('.split-pane');
+
+        const rect =
+          container.getBoundingClientRect();
+
+
+        const totalWidth =
+          rect.width - resizer.offsetWidth;
+
+
+        const leftW =
+          Math.max(
+            200,
+            Math.min(
+              e.clientX - rect.left,
+              totalWidth - 200
+            )
+          );
+
+
+        const rightW =
+          totalWidth - leftW;
+
+
+        leftPanel.style.flex = 'none';
+        leftPanel.style.width =
+          leftW + 'px';
+
+
+        rightPanel.style.flex = 'none';
+        rightPanel.style.width =
+          rightW + 'px';
+
+      }
+    );
+
+
+    document.addEventListener(
+      'mouseup',
+      () => {
+
+        if (!isResizing) return;
+
+        isResizing = false;
+
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+
+
+        document
+          .querySelectorAll('iframe')
+          .forEach(frame => {
+            frame.style.pointerEvents = '';
+          });
+
+      }
+    );
+
+  </script>
+
 </body>
 </html>
