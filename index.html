@@ -21,7 +21,6 @@
       --border: #e4e4e7;
       --text: #18181b;
       --muted: #71717a;
-      --accent: #18181b;
     }
 
     html,
@@ -266,7 +265,7 @@
       min-height: 0;
     }
 
-    /* Resize handle */
+    /* ── RESIZE HANDLE ── */
 
     .resize-handle {
       width: 4px;
@@ -336,6 +335,7 @@
   <header class="topbar">
 
     <div class="topbar-brand">
+
       <div class="topbar-logo">
         <span>FEP</span>
       </div>
@@ -349,6 +349,7 @@
           Research Center · U.Porto
         </div>
       </div>
+
     </div>
 
 
@@ -358,7 +359,7 @@
         class="view-btn active"
         id="btn-split"
         onclick="setView('split')"
-        title="Comparar os dois wireframes lado a lado"
+        title="Comparar as duas propostas lado a lado"
       >
         <svg
           class="icon"
@@ -379,7 +380,7 @@
         class="view-btn"
         id="btn-content"
         onclick="setView('content')"
-        title="Ver apenas a versão Content-Oriented"
+        title="Ver proposta Content-Oriented"
       >
         <svg
           class="icon"
@@ -399,7 +400,7 @@
         class="view-btn"
         id="btn-institutional"
         onclick="setView('institutional')"
-        title="Ver apenas a versão Institucional"
+        title="Ver proposta Institucional"
       >
         <svg
           class="icon"
@@ -418,7 +419,11 @@
 
 
     <div class="topbar-right">
-      <span class="badge">2 wireframes</span>
+
+      <span class="badge">
+        2 propostas
+      </span>
+
     </div>
 
   </header>
@@ -437,12 +442,14 @@
       id="tab-content"
       onclick="switchTab('content')"
     >
+
       <span
         class="tab-dot"
         style="background:#22c55e"
       ></span>
 
       Content-Oriented
+
     </button>
 
 
@@ -451,12 +458,14 @@
       id="tab-institutional"
       onclick="switchTab('institutional')"
     >
+
       <span
         class="tab-dot"
         style="background:#a1a1aa"
       ></span>
 
       Institucional
+
     </button>
 
   </nav>
@@ -488,21 +497,21 @@
             style="background:#22c55e"
           ></span>
 
-          FEP RC — Home — Content-Oriented
+          Content-Oriented
 
         </div>
 
 
         <iframe
           src="fep-rc-home-v2-content-oriented-wireframe-v1_1.html"
-          title="FEP RC Home — Content-Oriented Wireframe"
+          title="FEP RC — Home — Content-Oriented"
           loading="lazy"
         ></iframe>
 
       </div>
 
 
-      <!-- Resize -->
+      <!-- Resize handle -->
 
       <div
         class="resize-handle"
@@ -525,14 +534,14 @@
             style="background:#a1a1aa"
           ></span>
 
-          FEP RC — Home — Institucional
+          Institucional
 
         </div>
 
 
         <iframe
           src="fep-rc-home-v1-institucional-wireframe-v1_1.html"
-          title="FEP RC Home — Institucional Wireframe"
+          title="FEP RC — Home — Institucional"
           loading="lazy"
         ></iframe>
 
@@ -550,7 +559,7 @@
 
       <iframe
         src="fep-rc-home-v2-content-oriented-wireframe-v1_1.html"
-        title="FEP RC Home — Content-Oriented Wireframe"
+        title="FEP RC — Home — Content-Oriented"
       ></iframe>
 
     </div>
@@ -565,7 +574,7 @@
 
       <iframe
         src="fep-rc-home-v1-institucional-wireframe-v1_1.html"
-        title="FEP RC Home — Institucional Wireframe"
+        title="FEP RC — Home — Institucional"
       ></iframe>
 
     </div>
@@ -580,7 +589,7 @@
     <span class="status-dot"></span>
 
     <span>
-      2 wireframes carregados
+      2 propostas carregadas
     </span>
 
 
@@ -593,7 +602,7 @@
       </span>
 
       <span>
-        FEP Research Center
+        FEP Research Center · U.Porto
       </span>
 
     </span>
@@ -636,8 +645,6 @@
         });
 
 
-      // Tab bar
-
       const tabBar =
         document.getElementById('tab-bar');
 
@@ -660,7 +667,8 @@
 
         document
           .getElementById('status-mode')
-          .textContent = 'Vista: Lado a lado';
+          .textContent =
+          'Vista: Lado a lado';
 
       }
 
